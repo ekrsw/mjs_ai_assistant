@@ -1,5 +1,9 @@
 import os
 import logging
+from dotenv import load_dotenv
+
+# .envファイルを読み込み
+load_dotenv()
 
 class Settings:
     HEADLESS_MODE = True
@@ -17,17 +21,17 @@ class Settings:
     SELENIUM_WAIT_TIME = 5
     PAGE_LOAD_WAIT = 3
     
-    # プロキシ設定
-    PROXY_HOST = "mjsproxy.mjs.co.jp"  # 例: "proxy.company.com"
-    PROXY_PORT = 80  # 例: 8080
+    # プロキシ設定（.envファイルから読み込み）
+    PROXY_HOST = os.getenv('PROXY_HOST')
+    PROXY_PORT = int(os.getenv('PROXY_PORT', '80'))
     
     # sampleプログラム互換のプロキシ設定
-    HTTP_PROXY = "http://@mjsproxy.mjs.co.jp:80"
-    HTTPS_PROXY = "http://@mjsproxy.mjs.co.jp:80"
-    NO_PROXY = "localhost,127.0.0.1,sv-vw-ejap,*.local,192.168.*,10.*,172.16.*,172.17.*,172.18.*,172.19.*,172.20.*,172.21.*,172.22.*,172.23.*,172.24.*,172.25.*,172.26.*,172.27.*,172.28.*,172.29.*,172.30.*,172.31.*"
+    HTTP_PROXY = os.getenv('HTTP_PROXY')
+    HTTPS_PROXY = os.getenv('HTTPS_PROXY')
+    NO_PROXY = os.getenv('NO_PROXY')
     
     # 初期URL設定  
-    INITIAL_URL = "http://sv-vw-ejap:5555/SupportCenter/main.aspx?area=nav_answers&etc=127&page=CS&pageType=EntityList&web=true"
+    INITIAL_URL = os.getenv('INITIAL_URL', "http://sv-vw-ejap:5555/SupportCenter/main.aspx?area=nav_answers&etc=127&page=CS&pageType=EntityList&web=true")
 
 
 def setup_logging():

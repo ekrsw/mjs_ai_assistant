@@ -3,3 +3,4 @@ pyodbc==5.0.1
 selenium==4.14.0
 pandas==2.1.2
 webdriver-manager==4.0.2
+python-dotenv==1.0.0

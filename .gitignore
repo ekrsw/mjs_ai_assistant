@@ -7,3 +7,6 @@ sample/
 
 # files
 files/
+
+# 環境設定ファイル
+.env
