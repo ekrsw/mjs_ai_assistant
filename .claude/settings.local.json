@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(findstr:*)",
+      "Bash(where:*)",
+      "Bash(python:*)",
+      "Bash(reg query:*)",
+      "Bash(powershell:*)",
+      "Bash(\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --version)"
+    ],
+    "deny": []
+  }
+}
